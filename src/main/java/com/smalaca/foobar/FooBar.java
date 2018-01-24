@@ -1,16 +1,24 @@
 package com.smalaca.foobar;
 
 class FooBar {
+    private static final String EMPTY = "";
+
     String convert(int input) {
+        String output = EMPTY;
+
         if (isPositiveMultiplicityOfThree(input)) {
-            return "Foo";
+            output += "Foo";
         }
         
         if (isPositiveMultiplicityOfFive(input)) {
-            return "Bar";
+            output += "Bar";
         }
 
-        return String.valueOf(input);
+        return isEmpty(output) ? String.valueOf(input) : output;
+    }
+
+    private boolean isEmpty(String output) {
+        return EMPTY.equals(output);
     }
 
     private boolean isPositiveMultiplicityOfFive(int input) {
