@@ -11,6 +11,8 @@ public class FooBarTest {
     private static final String INT_AS_STRING = "13";
     private static final int SOME_MULTIPLICITY_OF_THREE = 9;
     private static final String FOO = "Foo";
+    private static final int SOME_MULTIPLICITY_OF_FIVE = 25;
+    private static final String BAR = "Bar";
 
     private final FooBar fooBar = new FooBar();
 
@@ -33,5 +35,12 @@ public class FooBarTest {
         String result = fooBar.convert(SOME_MULTIPLICITY_OF_THREE);
 
         assertEquals(FOO, result);
+    }
+
+    @Test
+    public void shouldReturnBarWhenIntDividableByFiveGiven() {
+        String result = fooBar.convert(SOME_MULTIPLICITY_OF_FIVE);
+
+        assertEquals(BAR, result);
     }
 }
