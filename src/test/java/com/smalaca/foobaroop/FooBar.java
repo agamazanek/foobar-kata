@@ -1,5 +1,6 @@
 package com.smalaca.foobaroop;
 
+
 import static java.lang.String.valueOf;
 
 class FooBar {
@@ -10,23 +11,23 @@ class FooBar {
     }
 
     String asString() {
-        if (value == 0) {
-            return valueAsString();
+        String result = "";
+
+        if (value != 0) {
+            if (isValueDividableBy(3)) {
+                result += "Foo";
+            }
+
+            if (isValueDividableBy(5)) {
+                result += "Bar";
+            }
         }
 
-        if (value % 15 == 0) {
-            return "FooBar";
-        }
+        return result.isEmpty() ? valueAsString() : result;
+    }
 
-        if (value % 3 == 0) {
-            return "Foo";
-        }
-
-        if (value % 5 == 0) {
-            return "Bar";
-        }
-
-        return valueAsString();
+    private boolean isValueDividableBy(int divider) {
+        return value % divider == 0;
     }
 
     private String valueAsString() {
