@@ -13,6 +13,8 @@ public class FooBarTest {
     private static final String FOO = "Foo";
     private static final int SOME_MULTIPLICITY_OF_FIVE = 25;
     private static final String BAR = "Bar";
+    private static final int SOME_MULTIPLICITY_OF_FIFTEEN = 45;
+    private static final String FOOBAR = "FooBar";
 
     @Test
     public void shouldReturnZeroWhenZeroGiven() {
@@ -48,5 +50,14 @@ public class FooBarTest {
         String result = fooBar.asString();
 
         assertEquals(BAR, result);
+    }
+
+    @Test
+    public void shouldReturnFooBarWhenIntDividableByFifteenGiven() {
+        FooBar fooBar = new FooBar(SOME_MULTIPLICITY_OF_FIFTEEN);
+
+        String result = fooBar.asString();
+
+        assertEquals(FOOBAR, result);
     }
 }

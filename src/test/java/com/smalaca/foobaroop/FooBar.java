@@ -14,6 +14,10 @@ class FooBar {
             return valueAsString();
         }
 
+        if (value % 15 == 0) {
+            return "FooBar";
+        }
+
         if (value % 3 == 0) {
             return "Foo";
         }
