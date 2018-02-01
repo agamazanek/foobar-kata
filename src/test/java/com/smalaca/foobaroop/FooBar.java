@@ -18,6 +18,10 @@ class FooBar {
             return "Foo";
         }
 
+        if (value % 5 == 0) {
+            return "Bar";
+        }
+
         return valueAsString();
     }
 
