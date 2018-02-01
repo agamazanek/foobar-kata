@@ -9,6 +9,8 @@ public class FooBarTest {
     private static final String EXPECTED_ZERO = "0";
     private static final int SOME_INT = 13;
     private static final String INT_AS_STRING = "13";
+    private static final int SOME_MULTIPLICITY_OF_THREE = 12;
+    private static final String FOO = "Foo";
 
     @Test
     public void shouldReturnZeroWhenZeroGiven() {
@@ -26,5 +28,14 @@ public class FooBarTest {
         String result = fooBar.asString();
 
         assertEquals(INT_AS_STRING, result);
+    }
+
+    @Test
+    public void shouldReturnFooWhenIntDividableByThreeGiven() {
+        FooBar fooBar = new FooBar(SOME_MULTIPLICITY_OF_THREE);
+
+        String result = fooBar.asString();
+
+        assertEquals(FOO, result);
     }
 }

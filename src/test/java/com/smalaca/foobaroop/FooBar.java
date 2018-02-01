@@ -10,6 +10,18 @@ class FooBar {
     }
 
     String asString() {
+        if (value == 0) {
+            return valueAsString();
+        }
+
+        if (value % 3 == 0) {
+            return "Foo";
+        }
+
+        return valueAsString();
+    }
+
+    private String valueAsString() {
         return valueOf(value);
     }
 }
